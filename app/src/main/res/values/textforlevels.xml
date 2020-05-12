@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lvl1text0">Меркурий</string>
+    <string name="lvl1text1">Венера</string>
+    <string name="lvl1text2">Земля</string>
+    <string name="lvl1text3">Марс</string>
+    <string name="lvl1text4">Юпитер</string>
+    <string name="lvl1text5">Сатурн</string>
+    <string name="lvl1text6">Уран</string>
+    <string name="lvl1text7">Нептун</string>
+
+    <string name="lvl2text0">Смородина</string>
+    <string name="lvl2text1">Тля</string>
+    <string name="lvl2text2">Божья коровка</string>
+    <string name="lvl2text3">Паук</string>
+    <string name="lvl2text4">Синица</string>
+    <string name="lvl2text5">Гадюка</string>
+    <string name="lvl2text6">Ёж</string>
+    <string name="lvl2text7">Лиса</string>
+
+</resources>

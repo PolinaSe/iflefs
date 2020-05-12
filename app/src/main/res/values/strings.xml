@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Iflefs</string>
+    <string name="start">Начать</string>
+    <string name="back">Назад</string>
+    <string name="level">Уровень:</string>
+    <string name="level1">Уровень 1</string>
+    <string name="level2">Уровень 2</string>
+    <string name="level3">Уровень 3</string>
+    <string name="textcontinue">Продолжить</string>
+    <string name="time">Время:</string>
+    <string name="description">Задание:</string>
+    <string name="description1">Выбери планету, которая дальше от Солнца.</string>
+    <string name="description2">Выбери животное, которое находится выше в пищевой цепи.</string>
+    <string name="description3">Выбери съедобное.</string>
+
+
+    </resources>
