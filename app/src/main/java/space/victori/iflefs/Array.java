@@ -12,6 +12,7 @@ public class Array {
             R.drawable.onelevel_five,
             R.drawable.onelevel_six,
             R.drawable.onelevel_seven,};
+
     final int[] texts5={
             R.string.lvl5text0,
             R.string.lvl5text1,
@@ -32,6 +33,7 @@ public class Array {
             R.drawable.twolevel_five,
             R.drawable.twolevel_six,
             R.drawable.twolevel_seven,};
+
     final int[] texts6={
             R.string.lvl6text0,
             R.string.lvl6text1,
