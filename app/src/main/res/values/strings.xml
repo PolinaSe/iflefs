@@ -6,12 +6,33 @@
     <string name="level1">Уровень 1</string>
     <string name="level2">Уровень 2</string>
     <string name="level3">Уровень 3</string>
+    <string name="level4">Уровень 4</string>
+    <string name="level5">Уровень 5</string>
+    <string name="level6">Уровень 6</string>
+    <string name="level7">Уровень 7</string>
+    <string name="level8">Уровень 8</string>
+    <string name="level9">Уровень 9</string>
+    <string name="level10">Уровень 10</string>
+    <string name="level11">Уровень 11</string>
+    <string name="level12">Уровень 12</string>
     <string name="textcontinue">Продолжить</string>
     <string name="time">Время:</string>
+    <string name="pause">Пауза</string>
+    <string name="replay">Переиграть</string>
+    <string name="tomenu">В главное меню</string>
     <string name="description">Задание:</string>
-    <string name="description1">Выбери планету, которая дальше от Солнца.</string>
-    <string name="description2">Выбери животное, которое находится выше в пищевой цепи.</string>
-    <string name="description3">Выбери съедобное.</string>
+    <string name="description5">Выбери планету, которая дальше от Солнца.</string>
+    <string name="description6">Выбери животное, которое находится выше в пищевой цепи.</string>
+    <string name="description3">Выбери съедобное, будь внимателен.</string>
+    <string name="description4">Выбери представителя династии Романовых, который правил позже.</string>
+    <string name="description1">Выбери ноту, которая выше.</string>
+    <string name="description2">Выбери цвет, который в радуге находится ниже.</string>
+    <string name="description7">Выбери организм, который в эволюции животных находится выше.</string>
+    <string name="description8">Выбери страну, территория которой больше.</string>
+    <string name="description9">Выбери фазу луны на Северном полушарии, которая моложе.</string>
+    <string name="description10">Выбери существительное, которое используется только во множественном числе.</string>
+    <string name="description11">Выбери животное.</string>
+    <string name="description12">Выбери писателя, который родился позже.</string>
 
 
     </resources>

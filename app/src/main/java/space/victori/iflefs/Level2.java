@@ -2,6 +2,7 @@ package space.victori.iflefs;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -31,6 +33,9 @@ public class Level2 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
+    Dialog dialogpause;
+    private long pauseOffset=0;
+    private boolean running;
 
 
     public int numLeft; //Переменная для левой картинки + текст
@@ -64,9 +69,14 @@ public class Level2 extends AppCompatActivity {
         //установка "Уровень1"
         TextView text_levels= findViewById(R.id.text_levels);
         text_levels.setText(R.string.level2);
+
         //Установка описания уровня внутре него
         TextView text_desc = findViewById(R.id.text_description_in);
         text_desc.setText(R.string.description2);
+
+        //Установка картинки на фон уровня
+        ImageView imgfon= (ImageView)findViewById(R.id.background);
+        imgfon.setImageResource((R.drawable.level2));
 
         final ImageView img_left = (ImageView) findViewById(R.id.img_left);
         //скруглить углы
@@ -92,7 +102,11 @@ public class Level2 extends AppCompatActivity {
 
         //Установка картинки в диалоговое окно
         ImageView previewimg= (ImageView)dialog.findViewById(R.id.previewimg);
-        previewimg.setImageResource((R.drawable.previewimgtwo));
+        previewimg.setImageResource((R.drawable.previewimg2));
+
+        //Установка картинки в диалоговый фон
+        LinearLayout previewimgfon= (LinearLayout) dialog.findViewById(R.id.dialogfon);
+        previewimgfon.setBackgroundResource((R.drawable.previewbackground2));
 
         //Установка описания задания
         TextView textdescription = (TextView)dialog.findViewById(R.id.text_description);
@@ -143,7 +157,9 @@ public class Level2 extends AppCompatActivity {
         TextView textdescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text_descriptionEnd);
         textdescriptionEnd.setText(R.string.leveltwoend);
 
-
+        //Установка картинки в диалоговый фон
+        LinearLayout previewimgfonend= (LinearLayout) dialogEnd.findViewById(R.id.dialogfon);
+        previewimgfonend.setBackgroundResource((R.drawable.previewbackground2));
 
         //кнопка "x"
         TextView btnclose2 = (TextView) dialogEnd.findViewById(R.id.btnclose);
@@ -177,6 +193,94 @@ public class Level2 extends AppCompatActivity {
         });
         //_________________________________________________________
 
+        //___________________________________________________________
+        //Вызов диалогового окна во время паузы
+        dialogpause = new Dialog(this);
+        dialogpause.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogpause.setContentView(R.layout.dialogpause);
+        dialogpause.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); //прозрачное окно
+        dialogpause.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT);
+        dialogpause.setCancelable(false);
+
+        //кнопка "x"
+        TextView btnclose3 = (TextView) dialogpause.findViewById(R.id.btnclose);
+        btnclose3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!running) {
+                    mChronometer.setBase(SystemClock.elapsedRealtime() - pauseOffset);
+                    mChronometer.start();
+                    running = true;
+                }
+                dialogpause.dismiss();
+            }
+        });
+
+
+        //Установка картинки в диалоговый фон
+        LinearLayout previewimgfonpause= (LinearLayout) dialogpause.findViewById(R.id.dialogfon);
+        previewimgfonpause.setBackgroundResource((R.drawable.previewbackground2));
+
+
+        //кнопка "продолжить"
+        Button btncontinue3 = (Button) dialogpause.findViewById(R.id.btncontinue);
+        btncontinue3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!running) {
+                    mChronometer.setBase(SystemClock.elapsedRealtime() - pauseOffset);
+                    mChronometer.start();
+                    running = true;
+                }
+                dialogpause.dismiss();
+            }
+        });
+
+        //кнопка "переиграть"
+        Button btnreplay = (Button) dialogpause.findViewById(R.id.btnreplay);
+        btnreplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Level2.this, Level2.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                }
+                dialogpause.dismiss();
+            }
+        });
+
+        //кнопка "выход в главное меню"
+        Button btntomenu = (Button) dialogpause.findViewById(R.id.btntomenu);
+        btntomenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Level2.this, GameLevels.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                }
+                dialogpause.dismiss();
+            }
+        });
+        //_________________________________________________________
+        //Обработка нажатия на кнопку паузы
+        TextView textpause = (TextView)findViewById(R.id.textpause);
+        textpause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (running) {
+                    mChronometer.stop();
+                    pauseOffset = SystemClock.elapsedRealtime() - mChronometer.getBase();
+                    running = false;
+                }
+                dialogpause.show();
+            }
+        });
+
 
 
         Button btn_back = (Button) findViewById(R.id.button_back);
@@ -198,22 +302,21 @@ public class Level2 extends AppCompatActivity {
                 R.id.point1, R.id.point2, R.id.point3, R.id.point4, R.id.point5,
                 R.id.point6, R.id.point7, R.id.point8, R.id.point9, R.id.point10,
                 R.id.point11, R.id.point12, R.id.point13, R.id.point14, R.id.point15,
-                R.id.point16, R.id.point17, R.id.point18, R.id.point19, R.id.point20,
         };
 
         //Анимация
         final Animation a= AnimationUtils.loadAnimation(space.victori.iflefs.Level2.this, R.anim.alpha);
 
-        numLeft = random.nextInt(8);
-        img_left.setImageResource(array.imaegs2[numLeft]);//Достаём из массива картинку
+        numLeft = random.nextInt(7);
+        img_left.setImageResource(array.images2[numLeft]);//Достаём из массива картинку
         text_left.setText(array.texts2[numLeft]);//Достаём из массива текст
 
-        numRight = random.nextInt(8);
+        numRight = random.nextInt(7);
         //Если числа равны
         while (numLeft==numRight){
-            numRight = random.nextInt(8);
+            numRight = random.nextInt(7);
         }
-        img_right.setImageResource(array.imaegs2[numRight]);
+        img_right.setImageResource(array.images2[numRight]);
         text_right.setText(array.texts2[numRight]);
 
         //Обработка нажатие на левую картинку
@@ -230,9 +333,9 @@ public class Level2 extends AppCompatActivity {
                     }
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     if (numLeft>numRight){
-                        if(count<20){ count++; }
+                        if(count<15){ count++; }
                         //Закрашиваем прогресс
-                        for(int i=0;i<20; i++){
+                        for(int i=0;i<15; i++){
                             TextView tv= findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -250,7 +353,7 @@ public class Level2 extends AppCompatActivity {
                                 count=count-2;
                             }
                         }
-                        for(int i=0;i<19; i++){
+                        for(int i=0;i<14; i++){
                             TextView tv= findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -261,22 +364,31 @@ public class Level2 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points_green);
                         }
                     }
-                    if(count==20){//ВЫХОД ИЗ УРОВНЯ
+                    if(count==15){//ВЫХОД ИЗ УРОВНЯ
                         mChronometer.stop();//остановка секундомера
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level= save.getInt("Level",1);
+                        if(level>2) {
+                            //пусто
+                        } else{
+                            SharedPreferences.Editor editor=save.edit();
+                            editor.putInt("Level",3);
+                            editor.commit();
+                        }
                         dialogEnd.show();
 
                     }else {
-                        numLeft = random.nextInt(8);
-                        img_left.setImageResource(array.imaegs2[numLeft]);//Достаём из массива картинку
+                        numLeft = random.nextInt(7);
+                        img_left.setImageResource(array.images2[numLeft]);//Достаём из массива картинку
                         img_left.startAnimation(a);
                         text_left.setText(array.texts2[numLeft]);
 
-                        numRight = random.nextInt(8);
+                        numRight = random.nextInt(7);
                         //Если числа равны
                         while (numLeft==numRight){
-                            numRight = random.nextInt(8);
+                            numRight = random.nextInt(7);
                         }
-                        img_right.setImageResource(array.imaegs2[numRight]);//Достаём из массива картинку
+                        img_right.setImageResource(array.images2[numRight]);//Достаём из массива картинку
                         img_right.startAnimation(a);
                         text_right.setText(array.texts2[numRight]);
 
@@ -301,9 +413,9 @@ public class Level2 extends AppCompatActivity {
                     }
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     if (numLeft<numRight){
-                        if(count<20){ count++; }
+                        if(count<15){ count++; }
                         //Закрашиваем прогресс
-                        for(int i=0;i<20; i++){
+                        for(int i=0;i<15; i++){
                             TextView tv= findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -321,7 +433,7 @@ public class Level2 extends AppCompatActivity {
                                 count=count-2;
                             }
                         }
-                        for(int i=0;i<19; i++){
+                        for(int i=0;i<14; i++){
                             TextView tv= findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -332,22 +444,32 @@ public class Level2 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points_green);
                         }
                     }
-                    if(count==20){ //ВЫХОД ИЗ УРОВНЯ
+                    if(count==15){//ВЫХОД ИЗ УРОВНЯ
                         mChronometer.stop();//остановка секундомера
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level= save.getInt("Level",1);
+                        if(level>2) {
+                            //пусто
+                        } else{
+                            SharedPreferences.Editor editor=save.edit();
+                            editor.putInt("Level",3);
+                            editor.commit();
+                        }
+
                         dialogEnd.show();
 
                     }else {
-                        numLeft = random.nextInt(8);
-                        img_left.setImageResource(array.imaegs2[numLeft]);//Достаём из массива картинку
+                        numLeft = random.nextInt(7);
+                        img_left.setImageResource(array.images2[numLeft]);//Достаём из массива картинку
                         img_left.startAnimation(a);
                         text_left.setText(array.texts2[numLeft]);
 
-                        numRight = random.nextInt(8);
+                        numRight = random.nextInt(7);
                         //Если числа равны
                         while (numLeft==numRight){
-                            numRight = random.nextInt(8);
+                            numRight = random.nextInt(7);
                         }
-                        img_right.setImageResource(array.imaegs2[numRight]); //Достаём из массива картинку
+                        img_right.setImageResource(array.images2[numRight]); //Достаём из массива картинку
                         img_right.startAnimation(a);
                         text_right.setText(array.texts2[numRight]); //Достаём из массива текст
 

@@ -1,21 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lvl1text0">Меркурий</string>
-    <string name="lvl1text1">Венера</string>
-    <string name="lvl1text2">Земля</string>
-    <string name="lvl1text3">Марс</string>
-    <string name="lvl1text4">Юпитер</string>
-    <string name="lvl1text5">Сатурн</string>
-    <string name="lvl1text6">Уран</string>
-    <string name="lvl1text7">Нептун</string>
+    <string name="lvl5text0">Меркурий</string>
+    <string name="lvl5text1">Венера</string>
+    <string name="lvl5text2">Земля</string>
+    <string name="lvl5text3">Марс</string>
+    <string name="lvl5text4">Юпитер</string>
+    <string name="lvl5text5">Сатурн</string>
+    <string name="lvl5text6">Уран</string>
+    <string name="lvl5text7">Нептун</string>
 
-    <string name="lvl2text0">Смородина</string>
-    <string name="lvl2text1">Тля</string>
-    <string name="lvl2text2">Божья коровка</string>
-    <string name="lvl2text3">Паук</string>
-    <string name="lvl2text4">Синица</string>
-    <string name="lvl2text5">Гадюка</string>
-    <string name="lvl2text6">Ёж</string>
-    <string name="lvl2text7">Лиса</string>
+    <string name="lvl6text0">Смородина</string>
+    <string name="lvl6text1">Тля</string>
+    <string name="lvl6text2">Божья коровка</string>
+    <string name="lvl6text3">Паук</string>
+    <string name="lvl6text4">Синица</string>
+    <string name="lvl6text5">Гадюка</string>
+    <string name="lvl6text6">Ёж</string>
+    <string name="lvl6text7">Лиса</string>
+
+    <string name="lvl3text1">Акутак</string>
+    <string name="lvl3text2">Бомбочки для ванн</string>
+    <string name="lvl3text3">Лампа из желатина</string>
+    <string name="lvl3text4">Горная порода</string>
+    <string name="lvl3text5">Мактак</string>
+    <string name="lvl3text6">Ластик</string>
+    <string name="lvl3text7">Пальчатый цитрон</string>
+    <string name="lvl3text8">Морская звезда</string>
+    <string name="lvl3text9">Столетнее яйцо</string>
+    <string name="lvl3text10">Мыло</string>
+    <string name="lvl3text11">Трюфель</string>
+    <string name="lvl3text12">Мяч для гольфа (разрез)</string>
+
+
+    <string name="lvl4text0">Михаил Фёдорович</string>
+    <string name="lvl4text1">Алексей Михайлович</string>
+    <string name="lvl4text2">Пётр I Великий</string>
+    <string name="lvl4text3">Екатерина I</string>
+    <string name="lvl4text4">Анна Иоанновна</string>
+    <string name="lvl4text5">Елизавета Петровна</string>
+    <string name="lvl4text6">Екатерина II Великая</string>
+    <string name="lvl4text7">Александр I</string>
+    <string name="lvl4text8">Николай I</string>
+    <string name="lvl4text9">Александр II</string>
+    <string name="lvl4text10">Александр III</string>
+    <string name="lvl4text11">Николай II</string>
+
+
+    <string name="lvl1text0">До</string>
+    <string name="lvl1text1">Ре</string>
+    <string name="lvl1text2">Ми</string>
+    <string name="lvl1text3">Фа</string>
+    <string name="lvl1text4">Соль</string>
+    <string name="lvl1text5">Ля</string>
+    <string name="lvl1text6">Си</string>
+
+
+    <string name="lvl2text0">Красный</string>
+    <string name="lvl2text1">Оранжевый</string>
+    <string name="lvl2text2">Жёлтый</string>
+    <string name="lvl2text3">Зелёный</string>
+    <string name="lvl2text4">Голубой</string>
+    <string name="lvl2text5">Синий</string>
+    <string name="lvl2text6">Фиолетовый</string>
+
+    <string name="lvl7text0">Одноклеточные животные</string>
+    <string name="lvl7text1">Многоклеточные животные</string>
+    <string name="lvl7text2">Черви</string>
+    <string name="lvl7text3">Моллюски</string>
+    <string name="lvl7text4">Членистоногие</string>
+    <string name="lvl7text5">Рыбы</string>
+    <string name="lvl7text6">Земноводные</string>
+    <string name="lvl7text7">Пресмыкающиеся</string>
+    <string name="lvl7text8">Птицы</string>
+    <string name="lvl7text9">Млекопитающие</string>
+
+    <string name="lvl8text0">Алжир</string>
+    <string name="lvl8text1">Казахстан</string>
+    <string name="lvl8text2">Аргентина</string>
+    <string name="lvl8text3">Индия</string>
+    <string name="lvl8text4">Австралия</string>
+    <string name="lvl8text5">Бразилия</string>
+    <string name="lvl8text6">Соединённые Штаты Америки</string>
+    <string name="lvl8text7">Китай</string>
+    <string name="lvl8text8">Канада</string>
+    <string name="lvl8text9">Россия</string>
+
+    <string name="lvl9text0">Старая луна</string>
+    <string name="lvl9text1">Последняя четверть</string>
+    <string name="lvl9text2">Убывающая луна</string>
+    <string name="lvl9text3">Полнолуние</string>
+    <string name="lvl9text4">Прибывающая луна</string>
+    <string name="lvl9text5">Первая четверть</string>
+    <string name="lvl9text6">Молодая луна</string>
+    <string name="lvl9text7">Новолуние</string>
+
+
+    <string name="lvl10text1">Весы</string>
+    <string name="lvl10text2">Любовь</string>
+    <string name="lvl10text3">Штаны</string>
+    <string name="lvl10text4">Масло</string>
+    <string name="lvl10text5">Кусачки</string>
+    <string name="lvl10text6">Новости</string>
+    <string name="lvl10text7">Ножницы</string>
+    <string name="lvl10text8">Соль</string>
+    <string name="lvl10text9">Очки</string>
+    <string name="lvl10text10">Мёд</string>
+
+    <string name="lvl11text1">Богомол-призрак</string>
+    <string name="lvl11text2">Фаленопсис</string>
+    <string name="lvl11text3">Жук-торпеда</string>
+    <string name="lvl11text4">Белая цапля, орхидея</string>
+    <string name="lvl11text5">Морской дракон-водоросль</string>
+    <string name="lvl11text6">Летящая уточка, орхидея</string>
+    <string name="lvl11text7">Палочник</string>
+    <string name="lvl11text8">Обезьянья мордочка, орхидея</string>
+    <string name="lvl11text9">Сатанинский листохвостый геккон</string>
+    <string name="lvl11text10">Cмеющийся шмель, oрхидея</string>
+    <string name="lvl11text11">Тряпичник</string>
+    <string name="lvl11text12">Танцующие девушки, орхидея</string>
+
+
+    <string name="lvl12text0">Гомер</string>
+    <string name="lvl12text1">Данте Алигьери</string>
+    <string name="lvl12text2">Мигель де Сервантес</string>
+    <string name="lvl12text3">Уильям Шекспир</string>
+    <string name="lvl12text4">Иоганн Вольфганг фон Гёте</string>
+    <string name="lvl12text5">Александр Сергеевич Пушкин</string>
+    <string name="lvl12text6">Виктор Мари Гюго</string>
+    <string name="lvl12text7">Фёдор Достоевский</string>
+    <string name="lvl12text8">Лев Толстой</string>
+    <string name="lvl12text9">Оскар Уайльд</string>
+    <string name="lvl12text10">Стивен Кинг</string>
 
 </resources>
